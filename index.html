@@ -10,23 +10,23 @@
     <!-- tailwind css -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="justify-items-center bg-yellow-500">
+<body class="justify-items-center bg-[url('img/bgtd.png')] bg-cover bg-center">
     <!-- header contern -->
     <header>
-        <h1 class="text-3xl font-bold"> TO DO LIST</h1>
+        <h1 class="text-3xl font-bold font-serif"> TO DO LIST</h1>
 
     </header>
 
     <!-- main content -->
-    <main>
+    <main class="overview w- mx-auto bg-black/10 p-6 rounded-2xl shadow-lg">
         <!-- from section -->
         <section>
             <form class="flex gap-4 mb-2">
-            <input class="border p-2 rounded text-gray-0" type="text" id="todo-input" placeholder="Enter a new todo item">
-            <input class="border p-2 rounded text-gray-500" type="date" id="todo-date" placeholder="Enter due date">
+            <input class="border p-2 rounded text-gray-700" font-sans type="text" id="todo-input" placeholder="Enter a new todo item">
+            <input class="border p-2 rounded text-gray-700" font-sans type="date" id="todo-date" placeholder="Enter due date">
 
-            <!-- buton tambha -->
-            <button class="border p-2 rounded text-gray-100 bg-green-500" type="button" onclick="addtodo();" id="add-todo-list" >ADD TODO</button>
+            <!-- buton tambah -->
+            <button class=" p-2 rounded text-gray-100 bg-green-900"  type="button" onclick="addtodo();" id="add-todo-list" >ADD</button>
 
         </form>
         </section>
@@ -34,10 +34,12 @@
         <!-- action section -->
         <section class="flex justify-between my-4">
             <!-- delete -->
-             <button class="border p-2 rounded text-gray-100 bg-red-500" id="clear-all-btn">Clear all</button>
+             <button class=" p-2 rounded text-gray-100 bg-red-500" type="button" onclick="deleteAllTodos()" id="clear-all-btn">CLEAR</button>
 
              <!-- fiter -->
-              <button class="border p-2 rounded text-gray-100 bg-blue-500" id="fiter-todo-btn"> filter todo</button>
+              <button class=" p-2 rounded text-gray-100 bg-slate-500" type="button" onclick="filtertodo()" id="fiter-todo-btn"> FILTER</button>
+              <button class=" p-2 rounded text-gray-100 bg-stone-800 hidden" id="reset-filter-btn" onclick="risettodo()">Reset Filter</button>
+              
         </section>
 
         <!-- intiya -->
@@ -45,6 +47,7 @@
             <ul id="todo-list">
                 <li>NO TODO Available</li>
             </ul>
+            <!-- <button class="border p-1 rounded text-gray-100 bg-yellow-500" type="button" onclick="risettodo()" id="fiter-todo-btn"> riset</button> -->
 
         </section>
 
